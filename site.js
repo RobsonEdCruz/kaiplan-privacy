@@ -12,7 +12,6 @@ function createScreenshot(item) {
   media.className = "shot-media";
 
   const image = document.createElement("img");
-  image.src = `assets/screenshots/${item.file}`;
   image.alt = item.alt || `Tela ${item.title} do Kaiplan`;
   image.loading = "lazy";
   image.decoding = "async";
@@ -21,8 +20,9 @@ function createScreenshot(item) {
   fallback.className = "shot-fallback";
   fallback.textContent = `Adicione ${item.file} em assets/screenshots`;
 
-  image.addEventListener("load", () => media.append(image));
-  image.addEventListener("error", () => media.append(fallback));
+  image.addEventListener("error", () => media.replaceChildren(fallback), { once: true });
+  media.append(image);
+  image.src = `assets/screenshots/${item.file}`;
 
   const caption = document.createElement("figcaption");
   const title = document.createElement("strong");

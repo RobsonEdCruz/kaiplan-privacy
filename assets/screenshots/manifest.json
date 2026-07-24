@@ -1,31 +1,31 @@
 [
   {
     "title": "Início",
-    "file": "home.webp",
+    "file": "home.png",
     "alt": "Tela inicial do Kaiplan",
     "description": "Visão geral do dia"
   },
   {
-    "title": "Agenda",
-    "file": "agenda.webp",
-    "alt": "Agenda do Kaiplan",
+    "title": "Dia",
+    "file": "dia.png",
+    "alt": "Visão diária do Kaiplan",
     "description": "Compromissos e tarefas em uma linha do tempo"
   },
   {
     "title": "Semana",
-    "file": "semana.webp",
+    "file": "semana.png",
     "alt": "Visão semanal do Kaiplan",
     "description": "Três dias, dias úteis ou semana completa"
   },
   {
     "title": "Mês",
-    "file": "mes.webp",
+    "file": "mes.png",
     "alt": "Visão mensal do Kaiplan",
     "description": "Uma leitura rápida dos itens de cada dia"
   },
   {
     "title": "Tarefas",
-    "file": "tarefas.webp",
+    "file": "tarefas.png",
     "alt": "Lista de tarefas do Kaiplan",
     "description": "Listas, tarefas e subtarefas"
   },

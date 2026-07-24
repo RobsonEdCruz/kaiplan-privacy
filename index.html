@@ -1,74 +1,80 @@
-
 <!doctype html>
 <html lang="pt-BR">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Kaiplan - Planejamento com calma</title>
+    <meta name="theme-color" content="#fbf8ef">
+    <title>Kaiplan — Planejamento com calma</title>
     <meta name="description" content="Kaiplan combina agenda, tarefas, subtarefas e backup local em um app simples para organizar o dia.">
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <header class="topbar">
-      <nav class="nav">
-        <a class="brand" href="index.html">Kaiplan</a>
+      <nav class="nav" aria-label="Navegação principal">
+        <a class="brand" href="index.html" aria-current="page">Kaiplan</a>
         <div class="links">
           <a href="features.html">Recursos</a>
           <a href="screenshots.html">Capturas</a>
+          <a href="learning.html">Aprendizado</a>
           <a href="privacy.html">Privacidade</a>
-          <a href="terms.html">Termos</a>
           <a href="support.html">Suporte</a>
-          <a href="feedback.html">Feedback</a>
         </div>
       </nav>
     </header>
 
-    <main class="hero">
-      <section>
-        <h1>Kaiplan</h1>
-        <p class="lead">Um planejador local-first para unir compromissos, tarefas e subtarefas em uma rotina mais clara, inspirado no melhor do Google Agenda e do Microsoft To Do.</p>
-        <div class="actions">
-          <a class="button" href="features.html">Ver recursos</a>
-          <a class="button secondary" href="privacy.html">Política de Privacidade</a>
-        </div>
-      </section>
-
-      <aside class="phone" aria-label="Prévia visual do aplicativo">
-        <div class="phone-screen">
-          <div class="phone-header">Hoje</div>
-          <div class="timeline">
-            <div class="fake-card event">
-              <strong>Reunião</strong><br>
-              09:30 - 10:00<br>
-              Sala principal
-            </div>
-            <div class="fake-card task">
-              <strong>Revisar tarefas</strong><br>
-              Lista: Tarefas
-            </div>
+    <main>
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Planejamento local-first</p>
+          <h1>Seu tempo, com mais clareza.</h1>
+          <p class="lead">Agenda, tarefas e subtarefas reunidas em uma experiência simples para planejar a rotina sem excesso — com seus dados sob seu controle.</p>
+          <div class="actions">
+            <a class="button" href="features.html">Conhecer os recursos</a>
+            <a class="button secondary" href="screenshots.html">Ver o aplicativo</a>
           </div>
         </div>
-      </aside>
+
+        <aside class="phone" aria-label="Prévia visual do aplicativo">
+          <div class="phone-screen">
+            <div class="phone-header">Hoje</div>
+            <div class="timeline">
+              <div class="fake-card event">
+                <strong>Reunião</strong><br>
+                09:30–10:00<br>
+                Sala principal
+              </div>
+              <div class="fake-card task">
+                <strong>Revisar tarefas</strong><br>
+                Lista: Tarefas
+              </div>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="section">
+        <div class="section-heading">
+          <p class="eyebrow">O essencial, bem resolvido</p>
+          <h2>Feito para planejar sem complicar</h2>
+          <p>Organização prática para acompanhar o dia e abrir espaço para o que importa.</p>
+        </div>
+        <div class="grid">
+          <article class="card">
+            <h3>Agenda diária e semanal</h3>
+            <p>Visualizações de dia, semana e mês, com horários claros e cards coloridos.</p>
+          </article>
+          <article class="card">
+            <h3>Tarefas com subtarefas</h3>
+            <p>Listas, conclusão e níveis de organização simples para acompanhar cada etapa.</p>
+          </article>
+          <article class="card">
+            <h3>Backup sob seu controle</h3>
+            <p>Exportação local e uma base preparada para futuras opções de sincronização.</p>
+          </article>
+        </div>
+      </section>
     </main>
 
-    <section class="section">
-      <h2>Feito para planejar sem excesso</h2>
-      <div class="grid">
-        <article class="card">
-          <h3>Agenda diária e semanal</h3>
-          <p>Visualização por dia, semana e mês, com horários claros e cards coloridos.</p>
-        </article>
-        <article class="card">
-          <h3>Tarefas com subtarefas</h3>
-          <p>Listas, conclusão, subtarefas e organização simples para acompanhar o que importa.</p>
-        </article>
-        <article class="card">
-          <h3>Backup e futuro premium</h3>
-          <p>Exportação local no free e base preparada para sincronização, Google Calendar e recursos premium.</p>
-        </article>
-      </div>
-    </section>
-
-    <footer class="footer">Kaiplan 0.1.2 - página provisória para testes.</footer>
+    <footer class="footer">Kaiplan 0.1.2 · Planejamento com calma.</footer>
   </body>
 </html>

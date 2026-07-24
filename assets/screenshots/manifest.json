@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Início",
+    "file": "home.webp",
+    "alt": "Tela inicial do Kaiplan",
+    "description": "Visão geral do dia"
+  },
+  {
+    "title": "Agenda",
+    "file": "agenda.webp",
+    "alt": "Agenda do Kaiplan",
+    "description": "Compromissos e tarefas em uma linha do tempo"
+  },
+  {
+    "title": "Tarefas",
+    "file": "tarefas.webp",
+    "alt": "Lista de tarefas do Kaiplan",
+    "description": "Listas, tarefas e subtarefas"
+  }
+]

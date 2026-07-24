@@ -12,9 +12,27 @@
     "description": "Compromissos e tarefas em uma linha do tempo"
   },
   {
+    "title": "Semana",
+    "file": "semana.webp",
+    "alt": "Visão semanal do Kaiplan",
+    "description": "Três dias, dias úteis ou semana completa"
+  },
+  {
+    "title": "Mês",
+    "file": "mes.webp",
+    "alt": "Visão mensal do Kaiplan",
+    "description": "Uma leitura rápida dos itens de cada dia"
+  },
+  {
     "title": "Tarefas",
     "file": "tarefas.webp",
     "alt": "Lista de tarefas do Kaiplan",
     "description": "Listas, tarefas e subtarefas"
+  },
+  {
+    "title": "Configurações",
+    "file": "configuracoes.webp",
+    "alt": "Configurações do Kaiplan",
+    "description": "Tema, notificações, backup e privacidade"
   }
 ]

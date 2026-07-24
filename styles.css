@@ -244,6 +244,14 @@ h3 {
   color: var(--muted);
 }
 
+.planned-features {
+  margin-top: 54px;
+  padding: 28px;
+  border: 1px dashed var(--line);
+  border-radius: var(--radius-md);
+  background: rgba(242, 234, 213, 0.48);
+}
+
 .grid {
   display: grid;
   gap: 18px;

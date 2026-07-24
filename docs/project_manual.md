@@ -27,7 +27,8 @@
 - A Home (`index.html`) deve funcionar como porta de entrada e linkar todas as paginas principais pelo menu e, quando possivel, por cards no corpo.
 - O conteudo do site deve ser atualizado a partir deste manual, de `.codex/project_patterns.md`, de `docs/react_native_roadmap.md`, de `docs/play_testing_publication.md` e da politica local em `src/content/privacyPolicy.js`.
 - A Politica de Privacidade publicada no site deve refletir a versao local do app e servir como URL publica exigida pela Play Console.
-- O formulario de Feedback/Bugs do site pode ser visual enquanto nao houver backend/e-mail definido; quando for ativado, atualizar este manual e a politica se houver coleta/envio de dados.
+- O formulario de Feedback/Bugs do site envia relatos pelo Formspree para notificacao por e-mail. O envio e voluntario e pode incluir tipo, mensagem, versao do app, aparelho/Android e e-mail opcional para resposta.
+- O site deve manter mensagens acessiveis de envio, sucesso e erro, alem de protecao basica contra spam. Mudancas no provedor ou nos dados coletados exigem atualizacao deste manual e da politica publicada.
 - O agente que cuidar do site deve manter linguagem simples, visual coerente com o Kaiplan, contraste legivel e nao prometer recursos premium ainda nao liberados.
 
 ## Estrutura

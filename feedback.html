@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#fbf8ef">
     <title>Feedback e Bugs — Kaiplan</title>
+    <meta name="description" content="Envie sugestões e relatos de problemas encontrados no Kaiplan.">
     <link rel="stylesheet" href="styles.css">
+    <script src="feedback.js" defer></script>
   </head>
   <body>
     <header class="topbar">
@@ -25,22 +27,42 @@
     <main class="content">
       <p class="eyebrow">Ajude o Kaiplan a evoluir</p>
       <h1>Feedback e reporte de bugs</h1>
-      <p>Este formulário é visual e pode ser ligado futuramente a e-mail, GitHub Issues, Google Forms ou backend próprio.</p>
-      <form class="form-card">
-        <label>Tipo
-          <select>
-            <option>Bug</option>
-            <option>Sugestão</option>
-            <option>Elogio</option>
+      <p>Conte o que aconteceu ou compartilhe uma ideia. Os relatos são enviados para a equipe responsável pelo Kaiplan.</p>
+      <form class="form-card" id="feedback-form" action="https://formspree.io/f/mdaqpobp" method="POST">
+        <label for="feedback-type">Tipo
+          <select id="feedback-type" name="subject" required>
+            <option value="Bug no Kaiplan">Bug</option>
+            <option value="Sugestão para o Kaiplan">Sugestão</option>
+            <option value="Elogio sobre o Kaiplan">Elogio</option>
           </select>
         </label>
-        <label>Seu e-mail
-          <input type="email" placeholder="voce@email.com">
+
+        <label for="feedback-email">Seu e-mail <span class="optional">(opcional)</span>
+          <input id="feedback-email" name="email" type="email" autocomplete="email" placeholder="voce@email.com">
+          <span class="form-help">Informe somente se quiser receber uma resposta.</span>
         </label>
-        <label>Mensagem
-          <textarea placeholder="Conte o que aconteceu ou o que gostaria de ver no Kaiplan."></textarea>
+
+        <label for="feedback-message">Mensagem
+          <textarea id="feedback-message" name="message" minlength="15" maxlength="4000" required placeholder="Descreva o problema, o resultado esperado e o que aconteceu."></textarea>
         </label>
-        <button class="button" type="button">Enviar em breve</button>
+
+        <div class="form-row">
+          <label for="feedback-version">Versão do Kaiplan
+            <input id="feedback-version" name="version" type="text" value="0.1.2">
+          </label>
+          <label for="feedback-device">Aparelho e Android <span class="optional">(opcional)</span>
+            <input id="feedback-device" name="device" type="text" placeholder="Ex.: Galaxy A54, Android 15">
+          </label>
+        </div>
+
+        <div class="form-trap" aria-hidden="true">
+          <label for="feedback-company">Não preencha este campo</label>
+          <input id="feedback-company" name="_gotcha" type="text" tabindex="-1" autocomplete="off">
+        </div>
+
+        <p class="form-notice">Ao enviar, os dados preenchidos serão processados pelo Formspree para entregar o relato. Consulte a <a href="privacy.html">Política de Privacidade</a>.</p>
+        <p class="form-status" id="feedback-status" role="status" aria-live="polite" hidden></p>
+        <button class="button" type="submit">Enviar relato</button>
       </form>
     </main>
     <footer class="footer">Kaiplan · Feedback</footer>

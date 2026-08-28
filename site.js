@@ -4,6 +4,25 @@ async function readManifest(path) {
   return response.json();
 }
 
+const isEnglish = document.documentElement.lang === "en";
+const messages = isEnglish
+  ? {
+      screenshotAlt: (title) => `Kaiplan ${title} screen`,
+      missingScreenshot: (file) => `Add ${file} to assets/screenshots`,
+      emptyGallery: "The gallery is ready. Add the images and update the screenshot manifest.",
+      material: "Material",
+      openMaterial: "Open material",
+      emptyLibrary: "The library is ready to receive guides, documents, and other learning materials.",
+    }
+  : {
+      screenshotAlt: (title) => `Tela ${title} do Kaiplan`,
+      missingScreenshot: (file) => `Adicione ${file} em assets/screenshots`,
+      emptyGallery: "A galeria está pronta. Adicione as imagens e atualize o manifesto da pasta de screenshots.",
+      material: "Material",
+      openMaterial: "Abrir material",
+      emptyLibrary: "A biblioteca está pronta para receber guias, documentos e outros arquivos de aprendizado.",
+    };
+
 function createScreenshot(item) {
   const figure = document.createElement("figure");
   figure.className = "shot-card";
@@ -12,13 +31,13 @@ function createScreenshot(item) {
   media.className = "shot-media";
 
   const image = document.createElement("img");
-  image.alt = item.alt || `Tela ${item.title} do Kaiplan`;
+  image.alt = item.alt || messages.screenshotAlt(item.title);
   image.loading = "lazy";
   image.decoding = "async";
 
   const fallback = document.createElement("span");
   fallback.className = "shot-fallback";
-  fallback.textContent = `Adicione ${item.file} em assets/screenshots`;
+  fallback.textContent = messages.missingScreenshot(item.file);
 
   image.addEventListener("error", () => media.replaceChildren(fallback), { once: true });
   media.append(image);
@@ -39,11 +58,12 @@ async function loadScreenshots() {
   if (!gallery) return;
 
   try {
-    const items = await readManifest("assets/screenshots/manifest.json");
+    const manifest = gallery.dataset.manifest || "assets/screenshots/manifest.json";
+    const items = await readManifest(manifest);
     if (!items.length) throw new Error("Manifesto vazio");
     gallery.replaceChildren(...items.map(createScreenshot));
   } catch {
-    gallery.innerHTML = '<p class="empty-state">A galeria está pronta. Adicione as imagens e atualize o manifesto da pasta de screenshots.</p>';
+    gallery.innerHTML = `<p class="empty-state">${messages.emptyGallery}</p>`;
   }
 }
 
@@ -53,7 +73,7 @@ function createResource(item) {
 
   const meta = document.createElement("span");
   meta.className = "resource-meta";
-  meta.textContent = item.type || "Material";
+  meta.textContent = item.type || messages.material;
 
   const title = document.createElement("h3");
   title.textContent = item.title;
@@ -65,7 +85,7 @@ function createResource(item) {
   if (item.file) {
     const link = document.createElement("a");
     link.href = `content/learning/${item.file}`;
-    link.textContent = item.linkLabel || "Abrir material";
+    link.textContent = item.linkLabel || messages.openMaterial;
     article.append(link);
   }
   return article;
@@ -76,11 +96,12 @@ async function loadLearningResources() {
   if (!list) return;
 
   try {
-    const items = await readManifest("content/learning/manifest.json");
+    const manifest = list.dataset.manifest || "content/learning/manifest.json";
+    const items = await readManifest(manifest);
     if (!items.length) throw new Error("Manifesto vazio");
     list.replaceChildren(...items.map(createResource));
   } catch {
-    list.innerHTML = '<p class="empty-state">A biblioteca está pronta para receber guias, documentos e outros arquivos de aprendizado.</p>';
+    list.innerHTML = `<p class="empty-state">${messages.emptyLibrary}</p>`;
   }
 }
 

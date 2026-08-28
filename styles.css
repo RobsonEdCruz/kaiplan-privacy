@@ -101,6 +101,30 @@ a:hover {
   color: var(--brand-dark);
 }
 
+.language-switcher {
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.language-switcher a,
+.language-switcher strong {
+  border-radius: 999px;
+  padding: 5px 8px;
+  color: var(--muted);
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.language-switcher strong {
+  background: var(--paper-deep);
+  color: var(--brand-dark);
+}
+
 .hero,
 .section {
   max-width: 1120px;
@@ -346,6 +370,22 @@ h3 {
 .content p,
 .content li {
   color: var(--muted);
+}
+
+.legal-summary {
+  margin: 24px 0 36px;
+  padding: 20px 22px;
+  border-left: 4px solid var(--brand);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  background: rgba(242, 234, 213, 0.52);
+}
+
+.legal-summary p {
+  margin: 0;
+}
+
+.legal-summary p + p {
+  margin-top: 10px;
 }
 
 .content .card + .card {

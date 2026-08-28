@@ -1,4 +1,16 @@
 const feedbackForm = document.querySelector("#feedback-form");
+const feedbackIsEnglish = document.documentElement.lang === "en";
+const feedbackMessages = feedbackIsEnglish
+  ? {
+      sending: "Sending…",
+      success: "Report sent. Thank you for helping Kaiplan improve!",
+      error: "We could not send it right now. Check your connection and try again.",
+    }
+  : {
+      sending: "Enviando…",
+      success: "Relato enviado. Obrigado por ajudar o Kaiplan a evoluir!",
+      error: "Não foi possível enviar agora. Verifique sua conexão e tente novamente.",
+    };
 
 if (feedbackForm) {
   const status = document.querySelector("#feedback-status");
@@ -9,7 +21,7 @@ if (feedbackForm) {
     event.preventDefault();
 
     submitButton.disabled = true;
-    submitButton.textContent = "Enviando…";
+    submitButton.textContent = feedbackMessages.sending;
     status.hidden = true;
     status.dataset.state = "";
 
@@ -23,10 +35,10 @@ if (feedbackForm) {
       if (!response.ok) throw new Error("Falha no envio");
 
       feedbackForm.reset();
-      status.textContent = "Relato enviado. Obrigado por ajudar o Kaiplan a evoluir!";
+      status.textContent = feedbackMessages.success;
       status.dataset.state = "success";
     } catch {
-      status.textContent = "Não foi possível enviar agora. Verifique sua conexão e tente novamente.";
+      status.textContent = feedbackMessages.error;
       status.dataset.state = "error";
     } finally {
       status.hidden = false;

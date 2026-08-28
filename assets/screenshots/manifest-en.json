@@ -1,0 +1,38 @@
+[
+  {
+    "title": "Home",
+    "file": "home.png",
+    "alt": "Kaiplan home screen",
+    "description": "Overview of the day"
+  },
+  {
+    "title": "Day",
+    "file": "dia.png",
+    "alt": "Kaiplan day view",
+    "description": "Appointments and tasks on a timeline"
+  },
+  {
+    "title": "Week",
+    "file": "semana.png",
+    "alt": "Kaiplan week view",
+    "description": "Three days, business days, or full week"
+  },
+  {
+    "title": "Month",
+    "file": "mes.png",
+    "alt": "Kaiplan month view",
+    "description": "A quick view of each day's items"
+  },
+  {
+    "title": "Tasks",
+    "file": "tarefas.png",
+    "alt": "Kaiplan task lists",
+    "description": "Lists, tasks, and subtasks"
+  },
+  {
+    "title": "Settings",
+    "file": "configuracoes.webp",
+    "alt": "Kaiplan settings",
+    "description": "Theme, notifications, backup, and privacy"
+  }
+]
